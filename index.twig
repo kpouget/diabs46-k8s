@@ -7,8 +7,8 @@
     <section id="banner">
         <div class="inner">
             <div class="logo"><img class=icon alt="GSQ" src="/theme/gsq-theme-solid-state/images/logo.svg"/></span></div>
-            <h2>This is Solid State</h2>
-            <p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+            <h2>{{ config.get('general/sitename') -}}</h2>
+            <p>{{ config.get('general/payoff') }}</p>
         </div>
     </section>
 {% endblock banner %}
