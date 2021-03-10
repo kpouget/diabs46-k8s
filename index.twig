@@ -15,7 +15,7 @@
 
 {% block content %}
 
-    {% setcontent lastThreePages = 'pages/latest/3' %}
+    {% setcontent lastThreePages = 'pages/first/3' %}
     {% for page in lastThreePages %}
 
         {% if loop.first %}
@@ -29,7 +29,7 @@
                     <div class="content">
                         <h2 class="major">{{ page.title }}</h2>
                         <p>{{ page.teaser }}</p>
-                        <a href="{{ page.link }}" class="special">Learn more</a>
+                        <a href="{{ page.link }}" class="special">Par ici</a>
                     </div>
                 </div>
             </section>
@@ -45,7 +45,7 @@
                     <div class="content">
                         <h2 class="major">{{ page.title }}</h2>
                         <p>{{ page.teaser }}</p>
-                        <a href="{{ page.link }}" class="special">Learn more</a>
+                        <a href="{{ page.link }}" class="special">Par ici</a>
                     </div>
                 </div>
             </section>
@@ -61,7 +61,7 @@
                     <div class="content">
                         <h2 class="major">{{ page.title }}</h2>
                         <p>{{ page.teaser }}</p>
-                        <a href="{{ page.link }}" class="special">Learn more</a>
+                        <a href="{{ page.link }}" class="special">Par ici</a>
                     </div>
                 </div>
             </section>
@@ -70,20 +70,20 @@
 
     {% endfor %}
 
-    {% setcontent news = 'entries/latest/4' %}
+    {% setcontent bottom = 'page/les-autres-actions-du-club' %}
     <!-- Four -->
         <section id="four" class="wrapper alt style1">
             <div class="inner">
-                <h2 class="major">Les autres actions du club</h2>
-                <p>D'autres actions réalisées par les membres du club:</p>
+                <h2 class="major">{{ bottom.title }}</h2>
+                <p>{{ bottom.teaser }}</p>
                 <section class="features">
-
-                    {% for item in news %}
+                    
+                    {% for item in bottom.related() %}
                         <article>
                             <a class="image"><img src="{{ item.image|thumbnail(572, 333, "c") }}" alt="" /></a>
                             <h3 class="major">{{ item.title }}</h3>
                             <p>{{ item.teaser }}</p>
-                            <a href="{{ item.link }}" class="special">Learn more</a>
+                            <a href="{{ item.link }}" class="special">Par ici</a>
                         </article>
                     {% endfor %}
 
@@ -93,6 +93,5 @@
                 </ul>
             </div>
         </section>
-
 
 {% endblock content %}

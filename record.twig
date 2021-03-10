@@ -13,32 +13,27 @@
     <div class="wrapper">
         <div class="inner">
 
-            <h3 class="major">{{ record.title }}</h3>
-
-            {{ record.teaser }}
-
             {% if record.image is not empty %}
                 <span class="image fit">
                     <img src="{{ record.image|image }}">
                 </span>
             {% endif %}
 
-            <h3 class="major">Vitae phasellus</h3>
-
             {{ record.body }}
 
-            {% setcontent entries = 'entries/latest/2' %}
-
+            {% set related_entries = record.related() %}
+            {% if related_entries is not empty %}
             <section class="features">
-                {% for entry in entries %}
+                {% for entry in related_entries %}
                     <article>
                         <a class="image"><img src="{{ entry.image|image }}" alt="" /></a>
                         <h3 class="major">{{ entry.title }}</h3>
                         <p>{{ entry.teaser|excerpt(200) }}</p>
-                        <a href="{{ entry.link }}" class="special">Learn more</a>
+                        <a href="{{ entry.link }}" class="special">Par ici</a>
                     </article>
                 {% endfor %}
             </section>
+            {% endif %}
 
         </div>
     </div>
