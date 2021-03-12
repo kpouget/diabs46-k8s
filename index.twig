@@ -6,7 +6,7 @@
 <!-- Banner -->
     <section id="banner">
         <div class="inner">
-            <div class="logo"><img class=icon alt="GSQ" src="/theme/gsq-theme-solid-state/images/logo.svg"/></span></div>
+            <div class="logo"><img class=icon alt="{{ config.get('general/sitename') -}}" src="{{ asset('images/logo.svg' , 'theme')}}"/></span></div>
             <h2>{{ config.get('general/sitename') -}}</h2>
             <p>{{ config.get('general/payoff') }}</p>
         </div>

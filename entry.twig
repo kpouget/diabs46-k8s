@@ -26,22 +26,32 @@
             {% endif %}
 
             {{ record.body }}
-
-            {% set related_entries = record.related() %}
-            {% if related_entries is not empty %}
+            {% if record.gallery is not empty %}
             <section class="features">
-                {% for entry in related_entries %}
+                {% for image in record.gallery %}
                     <article>
-                        <a class="image"><img src="{{ entry.image|image }}" alt="" /></a>
-                        <h3 class="major">{{ entry.title }}</h3>
-                        <p>{{ entry.teaser|excerpt(200) }}</p>
-                        <a href="{{ entry.link }}" class="special">Par ici</a>
+                        <a class="image" href="{{ image|image }}"><img src="{{ image|image }}" alt="" /></a>
+                        <h3 class="major">{{ image.title }}</h3>
                     </article>
                 {% endfor %}
             </section>
             {% endif %}
-
+            {% if record.related() is not empty %}
+            {% set related_page = record.related()[0] %}
+	        <!-- Footer -->
+       		<section class="features">
+                	<div class="inner">
+                        	<ul class="actions">
+                                	<li><a href="/pages/{{ related_page.slug }}" class="button primary">Retour à la page {% if related_page.retour_name is not empty %}{{ related_page.retour_name }}{% else %}précédente{% endif %}</a></li>
+	                        </ul>
+        	                <ul class="contact">
+                	                <li><a href="/" class="button primary">Retour à l'accueil</a></li>
+                        	</ul>
+	                </div>
+        	</section>
+            {% endif %}
         </div>
     </div>
+
 
 {% endblock content %}
