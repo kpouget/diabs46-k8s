@@ -15,7 +15,7 @@
 
 {% block content %}
 
-    {% setcontent lastThreePages = 'pages/first/3' %}
+    {% setcontent lastThreePages = 'pages' earliest limit 3 %}
     {% for page in lastThreePages %}
 
         {% if loop.first %}
@@ -70,7 +70,7 @@
 
     {% endfor %}
 
-    {% setcontent bottom = 'page/les-autres-actions-du-club' %}
+    {% setcontent bottom = 'page/les-actions-du-club' %}
     <!-- Four -->
         <section id="four" class="wrapper alt style1">
             <div class="inner">
@@ -89,7 +89,7 @@
 
                 </section>
                 <ul class="actions">
-                    <li><a href="{{ paths.root }}pages" class="button">Tout voir</a></li>
+                    <li><a href="/pages" class="button">Tout voir</a></li>
                 </ul>
             </div>
         </section>

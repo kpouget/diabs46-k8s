@@ -10,7 +10,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="{{ paths.theme }}css/main.css" />
+        <link rel="stylesheet" href="{{ asset('css/main.css', 'theme') }}" />
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
         <link rel="stylesheet" type="text/css" href="/app/view/css/magnific-popup.css">
@@ -22,7 +22,7 @@
 
                 <!-- Header -->
                     <header id="header" {% block headerClass %}{% endblock headerClass %}>
-                        <h1><a href="{{ paths.root }}">{{ config.get('general/sitename') -}}</a></h1>
+                        <h1><a href="/">{{ config.get('general/sitename') -}}</a></h1>
                         <nav>
                             <a href="#menu">Menu</a>
                         </nav>
@@ -64,12 +64,12 @@
             </div>
 
         <!-- Scripts -->
-            <script src="{{ paths.theme }}js/skel.min.js"></script>
-            <script src="{{ paths.theme }}js/jquery.min.js"></script>
-            <script src="{{ paths.theme }}js/jquery.scrollex.min.js"></script>
-            <script src="{{ paths.theme }}js/util.js"></script>
+            <script src="{{ asset('js/skel.min.js', 'theme') }}"></script>
+            <script src="{{ asset('js/jquery.min.js', 'theme') }}"></script>
+            <script src="{{ asset('js/jquery.scrollex.min.js', 'theme') }}"></script>
+            <script src="{{ asset('js/util.js', 'theme') }}"></script>
             <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
-            <script src="{{ paths.theme }}js/main.js"></script>
+            <script src="{{ asset('js/main.js', 'theme') }}"></script>
             <script src="/app/view/js/jquery.magnific-popup.min.js"></script>
             {# set up lightbox script here, or do this in your own .js file somewhere #}
             <script type="text/javascript">
