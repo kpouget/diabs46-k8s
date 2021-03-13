@@ -1,0 +1,19 @@
+# This file defines the menus on the website. See the documentation for
+# details: https://docs.bolt.cm/configuration/menus
+
+main:
+    - label: Accueil
+      title: Retour à la page principale.
+      path: homepage
+      class: first
+    - label: Données Administratives
+      path: /page/le-gsq
+    - label: Vie Quotidienne
+      path: /page/la-vie-quotidienne-du-club
+    - label: Suivi Chiroprères
+      path: /page/le-suivi-des-chiropteres
+    - label: Toutes les pages
+      path: pages/
+    - label: Nous contacter
+      path: pages/contact
+      class: last
