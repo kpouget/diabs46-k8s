@@ -1,0 +1,25 @@
+{% extends 'master.twig' %}
+
+{% block headerClass %}class="alt"{% endblock headerClass %}
+
+{% block banner %}
+<!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <div class="logo"><img class=icon alt="{{ config.get('general/sitename') -}}" src="{{ asset('images/logo.svg' , 'theme')}}"/></span></div>
+            <h2>{{ config.get('general/sitename') -}}</h2>
+            <p>{{ config.get('general/payoff') }}</p>
+        </div>
+    </section>
+{% endblock banner %}
+
+{% block content %}
+
+        <section id="four" class="wrapper alt style1">
+            <div class="inner">
+                <h2 class="major">Page not found</h2>
+                <p>:'(</p>
+            </div>
+        </section>
+
+{% endblock content %}

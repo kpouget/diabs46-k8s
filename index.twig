@@ -17,73 +17,39 @@
 
     {% setcontent lastThreePages = 'pages' earliest limit 3 %}
     {% for page in lastThreePages %}
-
-        {% if loop.first %}
-
-        <!-- One -->
-            <section id="one" class="wrapper spotlight style1">
+        <!-- Loop {{ loop.index }} -->
+        <section id="{% if loop.first %}one{% elseif loop.index == 2 %}two{% else %}three{% endif %}"
+                 class="wrapper {% if loop.index % 2 == 0%}alt {% endif %}spotlight style{{ loop.index }}">
                 <div class="inner">
                     {% if page.image is not empty %}
-                        {{ page.image|popup(276, 276, "r") }}
+                    <a href="{{ page|link }}" class="magnific image">
+                      <img src="{{ thumbnail(page.image, 276, 276) }}" width="276" height="276">
+                    </a>
                     {% endif %}
                     <div class="content">
-                        <h2 class="major">{{ page.title }}</h2>
+                        <h2 class="major"><a href="{{ page|link }}">{{ page.title }}</a></h2>
                         <p>{{ page.teaser }}</p>
-                        <a href="{{ page.link }}" class="special">Par ici</a>
+                        <a href="{{ page|link }}" class="special">Par ici</a>
                     </div>
-                </div>
-            </section>
-
-        {% elseif loop.last %}
-
-        <!-- Three -->
-            <section id="three" class="wrapper spotlight style3">
-                <div class="inner">
-                    {% if page.image is not empty %}
-                        {{ page.image|popup(276, 276, "r") }}
-                    {% endif %}
-                    <div class="content">
-                        <h2 class="major">{{ page.title }}</h2>
-                        <p>{{ page.teaser }}</p>
-                        <a href="{{ page.link }}" class="special">Par ici</a>
                     </div>
-                </div>
+
             </section>
-
-        {% else %}
-
-        <!-- Two -->
-            <section id="two" class="wrapper alt spotlight style2">
-                <div class="inner">
-                    {% if page.image is not empty %}
-                        {{ page.image|popup(276, 276, "r") }}
-                    {% endif %}
-                    <div class="content">
-                        <h2 class="major">{{ page.title }}</h2>
-                        <p>{{ page.teaser }}</p>
-                        <a href="{{ page.link }}" class="special">Par ici</a>
-                    </div>
-                </div>
-            </section>
-
-        {% endif %}
 
     {% endfor %}
 
-    {% setcontent bottom = 'page/les-actions-du-club' %}
+    {% setcontent page = 'page/les-actions-du-club' %}
     <!-- Four -->
         <section id="four" class="wrapper alt style1">
-            <div class="inner">
-                <h2 class="major">{{ bottom.title }}</h2>
-                <p>{{ bottom.teaser }}</p>
+          <div class="inner">
+            <h2 class="major"><a href="{{ page|link }}">{{ page.title }}</a></h2>
+                <p>{{ page.teaser }}</p>
                 <section class="features">
-                    
-                    {% for item in bottom.related() %}
+                    {% for entry in page|related %}
                         <article>
-                            <a class="image"><img src="{{ item.image|thumbnail(572, 333, "c") }}" alt="" /></a>
-                            <h3 class="major">{{ item.title }}</h3>
-                            <p>{{ item.teaser }}</p>
-                            <a href="{{ item.link }}" class="special">Par ici</a>
+                            <a class="image"><img src="{{ entry.image|thumbnail(572, 333, "c") }}" alt="" /></a>
+                            <h3 class="major">{{ entry.title }}</h3>
+                            <p>{{ entry.teaser }}</p>
+                            <a href="{{ entry|link }}" class="special">Par ici</a>
                         </article>
                     {% endfor %}
 
@@ -93,5 +59,4 @@
                 </ul>
             </div>
         </section>
-
 {% endblock content %}

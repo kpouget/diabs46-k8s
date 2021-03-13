@@ -13,15 +13,9 @@
     <div class="wrapper">
         <div class="inner">
 
-            {% if record.image is not empty %}
+               {% if record.image is not empty %}
                 <span class="image" style="padding-left: 40%">
-                  {% if imageinfo(record.image).landscape %}
-                      <img src="{{ thumbnail(record.image, 400, 320) }}" class="landscape">
-                  {% elseif imageinfo(record.image).portrait %}
-                      <img src="{{ thumbnail(record.image, 320, 400) }}" class="portrait">
-                  {% else %}
-                      <img src="{{ thumbnail(record.image, 320, 320) }}" class="square">
-                  {% endif %}
+                      <img src="{{ thumbnail(record.image, 320, 320, fit='c') }}" class="square" height="320" style="max-height: 320">
                 </span>
             {% endif %}
 
@@ -30,19 +24,20 @@
             <section class="features">
                 {% for image in record.gallery %}
                     <article>
-                        <a class="image" href="{{ image|image }}"><img src="{{ image|image }}" alt="" /></a>
-                        <h3 class="major">{{ image.title }}</h3>
+                        <a class="image" href="{{ image }}"><img src="{{ image|thumbnail(572, 333) }}" alt="" /></a>
+                        <h3 class="major">{{ image.alt }}</h3>
                     </article>
                 {% endfor %}
             </section>
             {% endif %}
-            {% if record.related() is not empty %}
-            {% set related_page = record.related()[0] %}
+
+            {% if record|related is not empty %}
+            {% set related_page = record|related|first %}
 	        <!-- Footer -->
        		<section class="features">
                 	<div class="inner">
                         	<ul class="actions">
-                                	<li><a href="/pages/{{ related_page.slug }}" class="button primary">Retour à la page {% if related_page.retour_name is not empty %}{{ related_page.retour_name }}{% else %}précédente{% endif %}</a></li>
+                                	<li><a href="/pages/{{ related_page.slug }}" class="button primary">Retour à la page {% if related_page.retour is not empty %}{{ related_page.retour }}{% else %}précédente{% endif %}</a></li>
 	                        </ul>
         	                <ul class="contact">
                 	                <li><a href="/" class="button primary">Retour à l'accueil</a></li>
