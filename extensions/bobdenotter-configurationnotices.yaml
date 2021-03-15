@@ -1,6 +1,6 @@
 # Settings for Bolt Configuration Notices
 
-local_domains: [ 'gsq4.972.ovh' ]
+local_domains: [ 'gsq.972.ovh' ]
 
 # checks:
 #    theme_folder_access: true
