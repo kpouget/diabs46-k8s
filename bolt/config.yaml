@@ -5,7 +5,7 @@ payoff: Le club Cadurciens des passionnés des cavités lotoises
 secret: '%env(APP_SECRET)%'
 
 # The theme to use.
-theme: theme-gst-sold-state
+theme: theme-gsq-solid-state
 
 # Set the timezone to be used on the website. For a list of valid timezone
 # settings, see: http://php.net/manual/en/timezones.php
