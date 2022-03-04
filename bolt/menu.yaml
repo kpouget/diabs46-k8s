@@ -4,7 +4,7 @@
 main:
     - label: Accueil
       title: Retour à la page principale.
-      path: homepage
+      path: /
       class: first
     - label: Données Administratives
       path: /page/le-gsq
@@ -13,7 +13,7 @@ main:
     - label: Suivi Chiroprères
       path: /page/le-suivi-des-chiropteres
     - label: Toutes les pages
-      path: pages/
+      path: /pages/
     - label: Nous contacter
-      path: pages/contact
+      path: /#footer
       class: last
