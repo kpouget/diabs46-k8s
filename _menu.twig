@@ -1,9 +1,9 @@
+
 {% for item in menu %}
+    <li {% if item.submenu %}class="has-dropdown"{% endif %}>
+        <a href="{{ item.path }}">{{ item.label }}{{ item.submenu }}</a>
 
-    <li {% if item.submenu is defined %}class="has-dropdown"{% endif %}>
-        <a href="{{ item.link }}">{{ item.label }}</a>
-
-        {% if item.submenu is defined %}
+        {% if item.submenu %}
 
             <ul class="dropdown">
                 {% for submenu in item.submenu %}
@@ -12,7 +12,5 @@
             </ul>
 
         {% endif %}
-
     </li>
-
 {% endfor %}
