@@ -22,7 +22,7 @@
                  class="wrapper {% if loop.index % 2 == 0%}alt {% endif %}spotlight style{{ loop.index }}">
                 <div class="inner">
                     {% if page.image is not empty %}
-                    <a href="{{ page|link }}" class="magnific image">
+                    <a href="{{ page.image }}" class="magnific image">
                       <img src="{{ thumbnail(page.image, 276, 276) }}" width="276" height="276">
                     </a>
                     {% endif %}
