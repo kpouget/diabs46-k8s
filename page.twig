@@ -2,6 +2,16 @@
 
 {% block content %}
 
+{% if record.image is not empty %}
+<style>
+  @media screen and (max-width: 4000px) {
+    #wrapper > header {
+      background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url("{{ record.image }}");
+    }
+  }
+</style>
+{% endif %}
+
 <header>
     <div class="inner">
         <h2>{{ record.title }}</h2>
@@ -12,13 +22,6 @@
 <!-- Content -->
     <div class="wrapper">
         <div class="inner">
-
-            {% if record.image is not empty %}
-                <span class="image" style="padding-left: 40%">
-                      <img src="{{ thumbnail(record.image, 320, 320) }}" class="square" height="320" style="max-height: 320">
-                </span>
-            {% endif %}
-
             {{ record.body }}
 
             {% set related_entries = record|related %}
