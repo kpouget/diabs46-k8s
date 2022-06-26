@@ -31,6 +31,9 @@ pages:
         template:
             type: templateselect
             filter: '/^[^_].*\.twig$/'
+        gallery:
+            type: imagelist
+            group: Images
     taxonomy: [ groups ]
     records_per_page: 5
     order: id
