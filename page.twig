@@ -39,6 +39,13 @@
             {% endif %}
 
         </div>
+
+  {% for image in record.gallery %}
+    <a href="{{ image }}" class="magnific image">
+      <img src="{{ thumbnail(image) }}" height="276" alt="{{ image.alt }}" title="{{ image.alt }}">
+    </a>
+  {% endfor %}
+
     </div>
 
 {% endblock content %}
