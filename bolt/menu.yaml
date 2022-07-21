@@ -6,15 +6,12 @@ main:
       title: Retour à la page principale.
       path: /
       class: first
-    - label: Données Administratives
+    - label: Quelques Photos
+      path: /page/quelques-photos
+    - label: Le GSQ
       path: /page/le-gsq
-    - label: Vie Quotidienne
-      path: /page/la-vie-quotidienne-du-club
-    - label: Suivi Chiroprères
-      path: /page/le-suivi-des-chiropteres
-    - label: Toutes les pages
-      path: /pages/
-    - label: Intranet du club (privé)
+
+    - label: Espace membres
       path: https://cloud.groupe-speleo-quercy.fr/
     - label: Nous contacter
       path: /#footer
