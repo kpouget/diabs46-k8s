@@ -3466,7 +3466,7 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url("../images/padirac_bg.jpg"); /*image pour la page d'acceuil*/
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url("../images/massar_bg.jpg"); /*image pour la page d'acceuil*/
 				background-size: auto,
  cover;
 				background-position: center,
@@ -3578,7 +3578,7 @@ input, select, textarea {
 		#wrapper > header { /* image général*/
 			padding: 9em 0 6.25em 0 ;
 			background-color: #2e3141;
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url("../images/padirac_bg.jpg");
+			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.6), rgba(46, 49, 65, 0.6)), url("../images/massar_bg.jpg");
 			background-size: auto,
  cover;
 			background-position: center,
@@ -3586,7 +3586,7 @@ input, select, textarea {
 			margin-bottom: -6.5em;
 		}
 
-		
+
 
 	}
 
@@ -4197,7 +4197,7 @@ input, select, textarea {
 			margin-bottom: -6.5em;
 		}
 
-		
+
 
 	}
 
@@ -4810,7 +4810,7 @@ input, select, textarea {
 			margin-bottom: -6.5em;
 		}
 
-		
+
 
 	}
 
@@ -5380,5 +5380,3 @@ input, select, textarea {
 		}
 
 	}
-
-	
