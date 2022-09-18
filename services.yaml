@@ -4,7 +4,7 @@ parameters:
     locale: 'en'
     # This parameter defines the codes of the locales (languages) enabled in the application
     app_locales: en|nl|es|fr|de|pl|it|hu|pt_BR|ja|nb|nn|nl_NL|nl_BE|is|ru
-    app.notifications.email_sender: gsq@972.ovh
+    app.notifications.email_sender: diabs46@972.ovh
     bolt.table_prefix: bolt_
     bolt.backend_url: /bolt
 
