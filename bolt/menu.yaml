@@ -8,8 +8,8 @@ main:
       class: first
     - label: Quelques Photos
       path: /page/quelques-photos
-    - label: Le GSQ
-      path: /page/le-gsq
+    - label: Les diabs 46
+      path: /page/les-diabs-46
 
     - label: Espace membres
       path: https://cloud.groupe-speleo-quercy.fr/
